@@ -76,3 +76,59 @@ Entry:
 | contentLineFive  | varchar(255)                    | YES  |     | NULL    |                |
 +------------------+---------------------------------+------+-----+---------+----------------+
 12 rows in set (0.00 sec)
+
+Exercise 9 - Barn
++----------------+
+| Tables_in_barn |
++----------------+
+| Hen            |
+| Presence       |
+| chick          |
+| rooster        |
++----------------+
+4 rows in set (0.02 sec)
+
+mysql> describe Hen;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| id          | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name        | varchar(50) | YES  |     | NULL    |                |
+| birthday    | datetime    | YES  |     | NULL    |                |
+| dateArrived | datetime    | YES  |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+4 rows in set (0.01 sec)
+
+mysql> describe chick;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| id          | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name        | varchar(50) | YES  |     | NULL    |                |
+| birthday    | datetime    | YES  |     | NULL    |                |
+| dateArrived | datetime    | YES  |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> describe rooster;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| id          | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name        | varchar(50) | YES  |     | NULL    |                |
+| birthday    | datetime    | YES  |     | NULL    |                |
+| dateArrived | datetime    | YES  |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+4 rows in set (0.01 sec)
+
+mysql> describe Presence;
++----------+-------------------------------+------+-----+---------+----------------+
+| Field    | Type                          | Null | Key | Default | Extra          |
++----------+-------------------------------+------+-----+---------+----------------+
+| id       | int(11)                       | NO   | PRI | NULL    | auto_increment |
+| animalID | int(11)                       | NO   | PRI | 0       |                |
+| name     | varchar(50)                   | YES  |     | NULL    |                |
+| date     | datetime                      | YES  |     | NULL    |                |
+| type     | enum('rooster','hen','chick') | YES  |     | NULL    |                |
++----------+-------------------------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
