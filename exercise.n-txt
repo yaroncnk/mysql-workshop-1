@@ -132,3 +132,48 @@ mysql> describe Presence;
 | type     | enum('rooster','hen','chick') | YES  |     | NULL    |                |
 +----------+-------------------------------+------+-----+---------+----------------+
 5 rows in set (0.00 sec)
+
+Hotel - Database for the challenge
+mysql> show tables;
++-----------------+
+| Tables_in_hotel |
++-----------------+
+| Availability    |
+| Floors          |
+| Rooms           |
++-----------------+
+3 rows in set (0.00 sec)
+
+mysql> describe Rooms;
++----------------+-----------------------------------------------------+------+-----+---------+----------------+
+| Field          | Type                                                | Null | Key | Default | Extra          |
++----------------+-----------------------------------------------------+------+-----+---------+----------------+
+| id             | int(11)                                             | NO   | PRI | NULL    | auto_increment |
+| roomType       | enum('rent','gym','public space-other','utilities') | YES  |     | NULL    |                |
+| numberOfGuests | int(11)                                             | YES  |     | NULL    |                |
+| kitchen        | tinyint(1)                                          | YES  |     | NULL    |                |
+| carpet         | tinyint(1)                                          | YES  |     | NULL    |                |
++----------------+-----------------------------------------------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+
+mysql> describe Floors;
++-----------------+---------+------+-----+---------+-------+
+| Field           | Type    | Null | Key | Default | Extra |
++-----------------+---------+------+-----+---------+-------+
+| floorNum        | int(11) | NO   | PRI | 0       |       |
+| roomID          | int(11) | NO   | PRI | 0       |       |
+| numberOfWindows | int(11) | YES  |     | NULL    |       |
++-----------------+---------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> describe Availability ;
++--------+----------+------+-----+---------+----------------+
+| Field  | Type     | Null | Key | Default | Extra          |
++--------+----------+------+-----+---------+----------------+
+| id     | int(11)  | NO   | PRI | NULL    | auto_increment |
+| roomID | int(11)  | YES  |     | NULL    |                |
+| date   | datetime | YES  |     | NULL    |                |
++--------+----------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
